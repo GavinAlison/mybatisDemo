@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- namespace属性是名称空间，必须唯一 -->
+<mapper namespace="com.alison.mybatis.dao.OrdersMapperCustom">
+
+    <!--查询订单关联查询用户信息-->
+    <select id="findOrdersUser" resultType="com.alison.mybatis.bean.OrderCustom">
+        SELECT a.*, b.username, b.sex, b.address
+        FROM orders a , ws_user b WHERE a.user_id = b.id
+    </select>
+</mapper>
