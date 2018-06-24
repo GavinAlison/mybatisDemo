@@ -1,4 +1,4 @@
-package com.alison.mybatis.bean;
+package com.alison.generator.model;
 
 public class Orderdetail {
     private Integer id;
@@ -9,8 +9,16 @@ public class Orderdetail {
 
     private Integer itemsNum;
 
-    //明细对应的商品信息
-    private Items items;
+    public Orderdetail(Integer id, Integer ordersId, Integer itemsId, Integer itemsNum) {
+        this.id = id;
+        this.ordersId = ordersId;
+        this.itemsId = itemsId;
+        this.itemsNum = itemsNum;
+    }
+
+    public Orderdetail() {
+        super();
+    }
 
     public Integer getId() {
         return id;
@@ -42,13 +50,5 @@ public class Orderdetail {
 
     public void setItemsNum(Integer itemsNum) {
         this.itemsNum = itemsNum;
-    }
-
-    public Items getItems() {
-        return items;
-    }
-
-    public void setItems(Items items) {
-        this.items = items;
     }
 }

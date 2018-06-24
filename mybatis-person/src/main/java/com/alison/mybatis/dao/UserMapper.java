@@ -16,4 +16,7 @@ public interface UserMapper {
     public User findUserById(int id);
 
     public UserCustom findUserListHe(UserQueryVo userQueryVo);
+
+    public void updateUserById(User user);
+
 }

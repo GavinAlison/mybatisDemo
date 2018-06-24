@@ -1,6 +1,9 @@
 package com.alison.mybatis.vo;
 
-public class OrderCustom {
+
+import com.alison.mybatis.bean.Orders;
+
+public class OrderCustom extends Orders {
     //添加用户属性
   /*USER.username,
     USER.sex,

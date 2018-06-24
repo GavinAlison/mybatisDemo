@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.alison.mybatis.dao.UserMapper">
+
+    <!-- 开启本mapper的namespace下的二缓存
+	type：指定cache接口的实现类的类型，mybatis默认使用PerpetualCache
+	要和ehcache整合，需要配置type为ehcache实现cache接口的类型
+	 -->
+    <cache type="org.mybatis.caches.ehcache.EhcacheCache"/>
+
     <!--定义 resultMap
     将select id id_, username username_ from user where id = #{value} 和WS_User类中的属性做一个映射关系
     type: resultMap最终映射的java对象类型
@@ -57,4 +64,8 @@
             </if>
         </where>
     </select>
+
+    <update id="updateUserById" parameterType="com.alison.mybatis.bean.User">
+        update ws_user a set a.username = #{username}, a.birthday =#{birthday} , sex= #{sex} , a.address =#{address} where a.id= #{id}
+    </update>
 </mapper>

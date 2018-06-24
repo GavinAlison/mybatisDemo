@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.Reader;
 import java.sql.Connection;
 
@@ -69,9 +68,14 @@ public class MyBatisUtil {
         }
     }
 
+
     public static void main(String[] args) {
         Connection conn = MyBatisUtil.getSqlSession().getConnection();
         System.out.println(conn != null ? "连接成功" : "否");
+    }
+
+    public static SqlSession getPrototypeSqlSession() {
+        return sqlSessionFactory.openSession();
     }
 
 }

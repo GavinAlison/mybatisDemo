@@ -12,5 +12,7 @@
         <module>mybatis-user</module>
         <module>mybatis-person</module>
         <module>redisDemo</module>
+        <module>mongoDbDemo</module>
+        <module>ehcacheDemo</module>
     </modules>
 </project>
