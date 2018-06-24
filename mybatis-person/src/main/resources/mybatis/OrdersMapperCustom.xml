@@ -2,6 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <!-- namespace属性是名称空间，必须唯一 -->
 <mapper namespace="com.alison.mybatis.dao.OrdersMapperCustom">
+
+    <!-- 以下两个<cache>标签二选一,第一个可以输出日志,第二个不输出日志 -->
+    <cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>
+    <!-- <cache type="org.mybatis.caches.ehcache.EhcacheCache"/> -->
+
     <!--定义查询订单关联查询用户信息的resultMap
         将整个查询结果映射到cn.zhisheng.mybatis.po.Orders
     -->
